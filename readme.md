@@ -25,6 +25,40 @@ Scavenger provides the following features and more out of the box.
 - SERP
     - Scavenger can be used to flexibly scrape Search Engine Result Pages.
 
+## Installation
+
+1. Update your `composer.json` to load package.
+    - Add local `vcs` repository. See composer [doc](https://getcomposer.org/doc/05-repositories.md#loading-a-package-from-a-vcs-repository) for more info.
+
+    eg.
+    ```js
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/DeveloperOnCall/scavenger"
+        }
+    ],
+    ```
+
+    - Require the package.
+    ```js
+    "require": {
+        //...
+        "developeroncall/scavenger": "~2.1"
+        //...
+    },
+    ```
+2. Add service provider to providers array in `config/app.php`.
+    ```php
+    //...
+    'providers' => [
+        //...
+        DeveloperOnCall\Scavenger\ScavengerServiceProvider::class,
+        //...
+    ],
+    // ...
+    ```
+
 ## Configuration
 
 Scavenger is highly configurable. These configurations remain for use the next time around. 
@@ -62,14 +96,14 @@ return [
         'id_prop' => 'email',
 
         // Daemon ID
-        'id' => 'daemon@xhub.trade',
+        'id' => 'daemon@hubx.cc',
 
         // Any additional information required to create a user:
         // NB. this is only used when creating a daemon user, there is no "safe" way
         // to change the daemon's password once he has been created.
         'info' => [
             'name' => 'Scavenger Daemon',
-            'password' => 'pass',
+            'password' => 'pass6699',
         ],
     ],
 
